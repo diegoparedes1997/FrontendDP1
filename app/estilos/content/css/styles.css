@@ -1,0 +1,88 @@
+body{
+  font-family: Arial;
+  margin: 0;
+}
+
+
+.color-fondo-azul-pucp{
+  background: #2b78e4 !important;
+}
+.color-blanco{
+  color: #fff !important;
+}
+
+.texto-retroalimentacion{
+  width: 100%;
+  height: 100%;
+  margin-top: 10px !important;
+}
+
+.texto-nota{
+  width: 50%;
+  float: right;
+}
+
+
+.swal-footer {
+  text-align: center;
+}
+
+.btn:hover{
+  background: rgb(127, 209, 214) !important;
+}
+.texto-centrado{
+  text-align:center !important;
+
+}
+
+.chosen-container {
+  width: 100% !important;
+}
+
+.dropdown-toggle::after{
+  content: none !important;
+}
+
+.label-letra-prometeo {
+  font-size: 15px !important;
+  font-weight: bold !important;
+}
+
+.label-letra-prometeo2 {
+  font-size: 20px !important;
+  font-weight: bold !important;
+}
+
+.titulo-letra-prometeo {
+  font-size: 20px !important;
+  font-weight: normal !important;
+}
+
+.input-letra-prometeo {
+  font-size: 15px !important;
+  font-weight: normal !important;
+}
+
+.table > thead > tr > th,
+.table > thead > tr > td {
+  font-weight: bold;
+  background-color: #2b78e4 !important;
+  border-color: white !important;
+  color: white !important;
+}
+
+.z-indice-prometeo {
+  z-index: 2;
+}
+
+.placeholder-select{
+  display: contents !important;
+}
+
+.letra-tabs{
+  font-weight: bold;
+}
+
+.largo-boton{
+  width: 200px;
+}
