@@ -37,6 +37,8 @@
   //Puerto de grupos
   window.__env.puertoGrupos = ':7011';
   //Puerto de reportes
+  window.__env.puertoAeropuertos = ':8081';
+  //Puerto de aeropuertos
   window.__env.puertoReportes = ':7012';
   //Permite depurar la aplicacion
   window.__env.enableDebug = true;

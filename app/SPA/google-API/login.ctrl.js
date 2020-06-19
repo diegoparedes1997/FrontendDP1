@@ -75,5 +75,11 @@ function ($scope, $state, variablesAmbiente, $cookies, loginService) {
     loginService.obtenerUsuarioLogin(idUsuario).then(function (usuario){
       ctrl.usuario.email = usuario.correo;
     });
+  };
+
+  ctrl.prueba = function () {
+    loginService.prueba().then(function (aeropuertos) {
+      console.log(aeropuertos);
+    })
   }
 }]);

@@ -36,4 +36,18 @@ function($q, $http, variablesAmbiente) {
     return $defer.promise;
   };
 
+  servicio.prueba = function () {
+    var urlObtenerAeropuertos = variablesAmbiente.apiUrl + variablesAmbiente.puertoAeropuertos + '/obtenerAeropuertos';
+    var $defer = $q.defer();
+    $http({
+        method: 'GET',
+        url: urlObtenerAeropuertos
+     }).then(function (respuesta) {
+       $defer.resolve(respuesta.data);
+     }).catch(function (error) {
+       $defer.reject(error);
+     });
+    return $defer.promise;
+  };
+
 }]);
