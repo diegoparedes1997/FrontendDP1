@@ -1,0 +1,29 @@
+[
+  {
+    "codigo": "ID1",
+    "cliente": "Cliente1",
+    "origen": "Lima",
+    "destino": "Madrid",
+    "fechaEnvio": "07/05/2020",
+    "fechaMaxLlegada": "09/05/2020",
+    "estado": "Enviado"
+  },
+  {
+    "codigo": "ID2",
+    "cliente": "Cliente2",
+    "origen": "Lima",
+    "destino": "Buenos Aires",
+    "fechaEnvio": "07/05/2020",
+    "fechaMaxLlegada": "08/05/2020",
+    "estado": "Recibido"
+  },
+  {
+    "codigo": "ID3",
+    "cliente": "Cliente3",
+    "origen": "Lima",
+    "destino": "Santiago",
+    "fechaEnvio": "07/05/2020",
+    "fechaMaxLlegada": "08/05/2020",
+    "estado": "Por enviar"
+  }
+]

@@ -31,6 +31,30 @@ function ($urlRouterProvider,stateHelperProvider) {
       url: '/inicio',
       templateUrl: 'index.html',
       children:[
+        {
+          name: 'raiz',
+          url: '/raiz',
+          templateUrl: 'SPA/raiz.html',
+          children:[
+            {
+              name: 'operario',
+              url: '/operario',
+              templateUrl: 'SPA/REDEX/Operario/operario.html',
+              children:[
+                {
+                  name: 'listaEnvios',
+                  url: '/listaEnvios',
+                  templateUrl: 'SPA/REDEX/Operario/Gestion-Envios/listaEnvios.html'
+                },
+                {
+                  name: 'agregarEnvio',
+                  url: '/agregarEnvio',
+                  templateUrl: 'SPA/REDEX/Operario/Gestion-Envios/agregarEnvio.html'
+                }
+              ]
+            }
+          ]
+        },
 //        {
 //          name: 'raiz',
 //          url: '/raiz',

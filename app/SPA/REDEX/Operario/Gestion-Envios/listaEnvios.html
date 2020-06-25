@@ -1,0 +1,44 @@
+<section id="main">
+  <div class="container">
+    <div ng-controller="listaEnviosCtrl as ctrl">
+      <div class="block-container">
+        <h2>Gestionar Env&iacute;os</h2>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>Env&iacute;os</h2>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="pull-right">
+                <button class="btn btn-primary color-fondo-azul-pucp waves-effect m-b-20 float-right" ng-click = "ctrl.agregarEnvio()"><i class="fa fa-plus-circle"></i> Agregar Env&iacute;o</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="table-responsive">
+                <table ng-Table="ctrl.tablaEnvios" class="table table-bordered">
+                  <tr ng-repeat="envio in ctrl.envios">
+                    <td data-title="'Codigo'">{{envio.codigo}}</td>
+                    <td data-title="'Cliente'">{{envio.cliente}}</td>
+                    <td data-title="'Origen'">{{envio.origen}}</td>
+                    <td data-title="'Destino'">{{envio.destino}}</td>
+                    <td data-title="'Fecha envío'">{{envio.fechaEnvio}}</td>
+                    <td data-title="'Fecha máxima de llegada'">{{envio.fechaMaxLlegada}}</td>
+                    <td data-title="'Estado'">{{envio.estado}}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

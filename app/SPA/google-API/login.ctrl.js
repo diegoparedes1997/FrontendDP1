@@ -81,5 +81,9 @@ function ($scope, $state, variablesAmbiente, $cookies, loginService) {
     loginService.prueba().then(function (aeropuertos) {
       console.log(aeropuertos);
     })
-  }
+  };
+
+  ctrl.pruebaLoginOperario = function () {
+    $state.go('raiz');
+  };
 }]);
