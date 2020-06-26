@@ -50,6 +50,16 @@ function ($urlRouterProvider,stateHelperProvider) {
                   name: 'agregarEnvio',
                   url: '/agregarEnvio',
                   templateUrl: 'SPA/REDEX/Operario/Gestion-Envios/agregarEnvio.html'
+                },
+                {
+                  name: 'agregarPaquetes',
+                  url: '/agregarPaquetes',
+                  templateUrl: 'SPA/REDEX/Operario/Gestion-Envios/Gestion-Paquetes/agregarPaquetes.html'
+                },
+                {
+                  name: 'agregarRutas',
+                  url: '/agregarRutas',
+                  templateUrl: 'SPA/REDEX/Operario/Gestion-Envios/Gestion-Rutas-Paquetes/agregarRutas.html'
                 }
               ]
             }

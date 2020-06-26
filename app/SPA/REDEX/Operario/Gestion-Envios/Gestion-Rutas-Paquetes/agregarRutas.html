@@ -1,0 +1,55 @@
+<section id="main">
+  <div class="container">
+    <div ng-controller="agregarRutasCtrl as ctrl">
+      <div class="block-container">
+        <h2>Registro de encomienda - Rutas</h2>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>C&aacute;lculo de rutas</h2>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6 col-sm-12">
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-primary btn-sm waves-effect" ng-click="ctrl.calcularRutasEnvio()">Calcular ruta</button>
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table ng-Table="ctrl.tablaPaquetes" class="table table-bordered">
+                  <tr ng-repeat="paquete in ctrl.listaPaquetes">
+                    <!-- <td data-title="'ID'">{{paquete.id}}</td> -->
+                    <td data-title="'Descripción'">{{paquete.descripcion}}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+              <div class="table-responsive">
+                <table ng-Table="ctrl.tablaRutas" class="table table-bordered">
+                  <tr ng-repeat="ruta in ctrl.listaRutas">
+                    <!-- <td data-title="'ID'">{{ruta.id}}</td> -->
+                    <td data-title="'Paquete'">{{ruta.descripcionPaquete}}</td>
+                    <td data-title="'Ruta'">{{ruta.cadenaRuta}}</td>
+                    <td data-title="'Hora ingreso (Local)'">{{ruta.horaIngreso}}</td>
+                    <td data-title="'Hora llegada (Local)'">{{ruta.horaLlegada}}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="row m-t-10">
+            <div class="col-md-12" align="right">
+              <button type="button" class="btn color-fondo-azul-pucp color-blanco" ng-click="ctrl.registrarRutasEnvio()"><i class="fa fa-save"></i> Registrar ruta</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

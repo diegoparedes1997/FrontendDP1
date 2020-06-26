@@ -1,0 +1,30 @@
+[
+  {
+    "nombre": "Diego",
+    "apellido": "Paredes",
+    "pais": "Perú",
+    "correo": "correo1@hotmail.com",
+    "telefono": "988665544"
+  },
+  {
+    "nombre": "Hector",
+    "apellido": "Bustamante",
+    "pais": "Argentina",
+    "correo": "correo2@hotmail.com",
+    "telefono": "788665544"
+  },
+  {
+    "nombre": "Milton",
+    "apellido": "Moncada",
+    "pais": "Polonia",
+    "correo": "correo3@hotmail.com",
+    "telefono": "588665544"
+  },
+  {
+    "nombre": "Robert",
+    "apellido": "Corrales",
+    "pais": "Francia",
+    "correo": "correo4@hotmail.com",
+    "telefono": "388665544"
+  }
+]

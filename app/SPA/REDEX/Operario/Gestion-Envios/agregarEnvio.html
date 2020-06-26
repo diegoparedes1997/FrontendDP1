@@ -21,7 +21,7 @@
                     <h2>Emisor</h2>
                   </div>
                   <div class="col-md-6">
-                    <button class="btn btn-default btn-icon-text waves-effect"><i class="zmdi zmdi-search"></i> Seleccionar emisor</button>
+                    <button class="btn btn-default btn-icon-text waves-effect" ng-click="ctrl.seleccionarEmisor()"><i class="zmdi zmdi-search"></i> Seleccionar emisor</button>
                   </div>
                 </div>
               </div>
@@ -29,7 +29,7 @@
                 <label for="inputNombre1" class="col-sm-4 control-label">Nombre</label>
                 <div class="col-sm-8">
                   <div class="fg-line">
-                    <input class="form-control input-sm" id="inputNombre1" placeholder="Nombre">
+                    <input class="form-control input-sm" id="inputNombre1" placeholder="Nombre" ng-model="ctrl.clienteEmisor.nombre">
                   </div>
                 </div>
               </div>
@@ -37,7 +37,7 @@
                 <label for="inputApellido1" class="col-sm-4 control-label">Apellido</label>
                 <div class="col-sm-8">
                   <div class="fg-line">
-                    <input class="form-control input-sm" id="inputApellido1" placeholder="Apellido">
+                    <input class="form-control input-sm" id="inputApellido1" placeholder="Apellido" ng-model="ctrl.clienteEmisor.apellido">
                   </div>
                 </div>
               </div>
@@ -45,7 +45,7 @@
                 <label for="inputPais1" class="col-sm-4 control-label">Pa&iacute;s</label>
                 <div class="col-sm-8">
                   <div class="fg-line">
-                    <input class="form-control input-sm" id="inputPais1" placeholder="Pais">
+                    <input class="form-control input-sm" id="inputPais1" placeholder="Pais" ng-model="ctrl.clienteEmisor.pais">
                   </div>
                 </div>
               </div>
@@ -53,7 +53,7 @@
                 <label for="inputCorreo1" class="col-sm-4 control-label">Correo electr&oacute;nico</label>
                 <div class="col-sm-8">
                   <div class="fg-line">
-                    <input class="form-control input-sm" id="inputCorreo1" placeholder="Correo electrónico">
+                    <input class="form-control input-sm" id="inputCorreo1" placeholder="Correo electrónico" ng-model="ctrl.clienteEmisor.correo">
                   </div>
                 </div>
               </div>
@@ -61,7 +61,7 @@
                 <label for="inputTelefono1" class="col-sm-4 control-label">Tel&eacute;fono</label>
                 <div class="col-sm-8">
                   <div class="fg-line">
-                    <input class="form-control input-sm" id="inputTelefono1" placeholder="Teléfono">
+                    <input class="form-control input-sm" id="inputTelefono1" placeholder="Teléfono" ng-model="ctrl.clienteEmisor.telefono">
                   </div>
                 </div>
               </div>
@@ -72,7 +72,8 @@
                     <select class="form-control"
                         placeholder="Seleccione un origen"
                         ng-model="ctrl.origen"
-                        ng-options="origen as origen.nombre for origen in ctrl.origenesLista"
+                        ng-change="ctrl.validarClientes()"
+                        ng-options="origen as origen.ciudad for origen in ctrl.origenesLista"
                         ng-disabled="ctrl.modoSoloLectura"
                         ng-readonly="ctrl.modoSoloLectura">
                         <option value="" disabled selected hidden class="placeholder-select" ng-if="!ctrl.origen">Seleccione un origen</option>
@@ -88,7 +89,7 @@
                     <h2>Receptor</h2>
                   </div>
                   <div class="col-md-6">
-                    <button class="btn btn-default btn-icon-text waves-effect"><i class="zmdi zmdi-search"></i> Seleccionar emisor</button>
+                    <button class="btn btn-default btn-icon-text waves-effect" ng-click="ctrl.seleccionarReceptor()"><i class="zmdi zmdi-search"></i> Seleccionar receptor</button>
                   </div>
                 </div>
               </div>
@@ -96,7 +97,7 @@
                 <label for="inputNombre2" class="col-sm-4 control-label">Nombre</label>
                 <div class="col-sm-8">
                   <div class="fg-line">
-                    <input class="form-control input-sm" id="inputNombre2" placeholder="Nombre">
+                    <input class="form-control input-sm" id="inputNombre2" placeholder="Nombre" ng-model="ctrl.clienteReceptor.nombre">
                   </div>
                 </div>
               </div>
@@ -104,7 +105,7 @@
                 <label for="inputApellido2" class="col-sm-4 control-label">Apellido</label>
                 <div class="col-sm-8">
                   <div class="fg-line">
-                    <input class="form-control input-sm" id="inputApellido2" placeholder="Apellido">
+                    <input class="form-control input-sm" id="inputApellido2" placeholder="Apellido" ng-model="ctrl.clienteReceptor.apellido">
                   </div>
                 </div>
               </div>
@@ -112,7 +113,7 @@
                 <label for="inputPais2" class="col-sm-4 control-label">Pa&iacute;s</label>
                 <div class="col-sm-8">
                   <div class="fg-line">
-                    <input class="form-control input-sm" id="inputPais2" placeholder="Pais">
+                    <input class="form-control input-sm" id="inputPais2" placeholder="Pais" ng-model="ctrl.clienteReceptor.pais">
                   </div>
                 </div>
               </div>
@@ -120,7 +121,7 @@
                 <label for="inputCorreo2" class="col-sm-4 control-label">Correo electr&oacute;nico</label>
                 <div class="col-sm-8">
                   <div class="fg-line">
-                    <input class="form-control input-sm" id="inputCorreo2" placeholder="Correo electrónico">
+                    <input class="form-control input-sm" id="inputCorreo2" placeholder="Correo electrónico" ng-model="ctrl.clienteReceptor.correo">
                   </div>
                 </div>
               </div>
@@ -128,7 +129,7 @@
                 <label for="inputTelefono2" class="col-sm-4 control-label">Tel&eacute;fono</label>
                 <div class="col-sm-8">
                   <div class="fg-line">
-                    <input class="form-control input-sm" id="inputTelefono2" placeholder="Teléfono">
+                    <input class="form-control input-sm" id="inputTelefono2" placeholder="Teléfono" ng-model="ctrl.clienteReceptor.telefono">
                   </div>
                 </div>
               </div>
@@ -137,12 +138,13 @@
                 <div class="col-sm-8">
                   <div class="fg-line">
                     <select class="form-control"
-                        placeholder="Seleccione un origen"
-                        ng-model="ctrl.origen"
-                        ng-options="origen as origen.nombre for origen in ctrl.destinosLista"
+                        placeholder="Seleccione un destino"
+                        ng-model="ctrl.destino"
+                        ng-change="ctrl.validarClientes()"
+                        ng-options="destino as destino.ciudad for destino in ctrl.destinosLista"
                         ng-disabled="ctrl.modoSoloLectura"
                         ng-readonly="ctrl.modoSoloLectura">
-                        <option value="" disabled selected hidden class="placeholder-select" ng-if="!ctrl.origen">Seleccione un destino</option>
+                        <option value="" disabled selected hidden class="placeholder-select" ng-if="!ctrl.destino">Seleccione un destino</option>
                    </select>
                   </div>
                 </div>
@@ -151,6 +153,7 @@
           </div>
           <div class="row m-t-10">
             <div class="col-md-12" align="right">
+              <button class="btn color-fondo-azul-pucp color-blanco" ng-click="ctrl.guardarClientes()" ng-disabled="!ctrl.registroValido" ng-if="!ctrl.modoSoloLectura"><i class="fa fa-save"></i> Guardar</button>
               <button type="button" class="btn btn-default waves-effect bgm-green m-r-5 m-l-5 float-right" ng-click="ctrl.regresarListarEnvios()"><i class="fa fa-arrow-circle-left"></i> Atrás</button>
             </div>
           </div>

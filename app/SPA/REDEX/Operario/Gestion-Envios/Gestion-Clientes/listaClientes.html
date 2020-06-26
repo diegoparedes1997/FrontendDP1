@@ -1,0 +1,51 @@
+<section>
+  <div>
+    <div class="card-header">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="actions">
+            <li>
+              <a class="pull-right" ng-click="ctrl.cerrar()"><i class="fa fa-window-close"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h4 class="modal-title">Seleccionar cliente</h4>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <div class="table-responsive">
+              <table ng-Table="ctrl.tablaClientes" class="table table-bordered">
+                <tr ng-repeat="cliente in ctrl.listaClientes">
+                  <td data-title="'Nombre'">{{cliente.nombre}}</td>
+                  <td data-title="'Apellido'">{{cliente.apellido}}</td>
+                  <td data-title="'País'">{{cliente.pais}}</td>
+                  <td data-title="'Correo'">{{cliente.correo}}</td>
+                  <td data-title="'Teléfono'">{{cliente.telefono}}</td>
+                  <td data-title="'Acciones'" align="center">
+                    <!-- <div align="center"> -->
+                    <a href="" style="padding:5px;" class="col-md-12" ng-click="ctrl.seleccionarCliente(cliente)">
+                      Seleccionar
+                    </a>
+                    <!-- </div> -->
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-b-25 p-r-25 p-l-25 p-t-2 text-right">
+
+        <button class="btn color-fondo-azul-pucp color-blanco" ng-click = "ctrl.guardarUsuario()" ng-disabled="!ctrl.registroValido" ng-if="!ctrl.modoSoloLectura"><i class="fa fa-save"></i> Guardar</button>
+        <button class="btn btn-danger waves-effect" ng-click = "ctrl.cerrar()"><i class="fa fa-ban"></i> Cancelar</button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "descripcionPaquete": "paquete1",
+    "horaIngreso": "01/06/2020 13:00 (-5 GMT)",
+    "horaLlegada": "03/06/2020 19:00 (+1 GMT)",
+    "cadenaRuta": "Lima-Madrid-Varsovia",
+    "codigosRuta": ["LIM", "MAD", "VAR"]
+  },
+  {
+    "id": "2",
+    "descripcionPaquete": "paquete2",
+    "horaIngreso": "01/06/2020 13:00 (-5 GMT)",
+    "horaLlegada": "03/06/2020 19:00 (+1 GMT)",
+    "cadenaRuta": "Lima-Madrid-Varsovia",
+    "codigosRuta": ["LIM", "MAD", "VAR"]
+  },
+  {
+    "id": "3",
+    "descripcionPaquete": "paquete3",
+    "horaIngreso": "01/06/2020 13:00 (-5 GMT)",
+    "horaLlegada": "03/06/2020 19:00 (+1 GMT)",
+    "cadenaRuta": "Lima-París-Varsovia",
+    "codigosRuta": ["LIM", "PAR", "VAR"]
+  }
+]
