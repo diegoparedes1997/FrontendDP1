@@ -33,15 +33,15 @@
               <div class="table-responsive">
                 <table ng-Table="ctrl.tablaPaquetes" class="table table-bordered">
                   <tr ng-repeat="paquete in ctrl.listaPaquetes">
-                    <td data-title="'ID'">{{paquete.id}}</td>
+                    <!-- <td data-title="'ID'">{{paquete.id}}</td> -->
                     <td data-title="'Descripción'">{{paquete.descripcion}}</td>
-                    <td data-title="'Acciones'" align="center">
-                      <!-- <div align="center"> -->
+                    <!-- <td data-title="'Acciones'" align="center">
+                      <div align="center">
                       <a href="" style="padding:5px;" class="col-md-12" ng-click="ctrl.eliminarPaquete(paquete, $index)">
                         Eliminar
                       </a>
-                      <!-- </div> -->
-                    </td>
+                      </div>
+                    </td> -->
                   </tr>
                 </table>
               </div>

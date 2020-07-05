@@ -33,7 +33,7 @@
                   </div>
                 </div>
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="inputApellido1" class="col-sm-4 control-label">Apellido</label>
                 <div class="col-sm-8">
                   <div class="fg-line">
@@ -48,12 +48,12 @@
                     <input class="form-control input-sm" id="inputPais1" placeholder="Pais" ng-model="ctrl.clienteEmisor.pais">
                   </div>
                 </div>
-              </div>
+              </div> -->
               <div class="form-group">
                 <label for="inputCorreo1" class="col-sm-4 control-label">Correo electr&oacute;nico</label>
                 <div class="col-sm-8">
                   <div class="fg-line">
-                    <input class="form-control input-sm" id="inputCorreo1" placeholder="Correo electrónico" ng-model="ctrl.clienteEmisor.correo">
+                    <input class="form-control input-sm" id="inputCorreo1" placeholder="Correo electrónico" ng-model="ctrl.clienteEmisor.email">
                   </div>
                 </div>
               </div>
@@ -73,7 +73,7 @@
                         placeholder="Seleccione un origen"
                         ng-model="ctrl.origen"
                         ng-change="ctrl.validarClientes()"
-                        ng-options="origen as origen.ciudad for origen in ctrl.origenesLista"
+                        ng-options="origen as origen.nombre for origen in ctrl.origenesLista"
                         ng-disabled="ctrl.modoSoloLectura"
                         ng-readonly="ctrl.modoSoloLectura">
                         <option value="" disabled selected hidden class="placeholder-select" ng-if="!ctrl.origen">Seleccione un origen</option>
@@ -101,7 +101,7 @@
                   </div>
                 </div>
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label for="inputApellido2" class="col-sm-4 control-label">Apellido</label>
                 <div class="col-sm-8">
                   <div class="fg-line">
@@ -116,12 +116,12 @@
                     <input class="form-control input-sm" id="inputPais2" placeholder="Pais" ng-model="ctrl.clienteReceptor.pais">
                   </div>
                 </div>
-              </div>
+              </div> -->
               <div class="form-group">
                 <label for="inputCorreo2" class="col-sm-4 control-label">Correo electr&oacute;nico</label>
                 <div class="col-sm-8">
                   <div class="fg-line">
-                    <input class="form-control input-sm" id="inputCorreo2" placeholder="Correo electrónico" ng-model="ctrl.clienteReceptor.correo">
+                    <input class="form-control input-sm" id="inputCorreo2" placeholder="Correo electrónico" ng-model="ctrl.clienteReceptor.email">
                   </div>
                 </div>
               </div>
@@ -141,7 +141,7 @@
                         placeholder="Seleccione un destino"
                         ng-model="ctrl.destino"
                         ng-change="ctrl.validarClientes()"
-                        ng-options="destino as destino.ciudad for destino in ctrl.destinosLista"
+                        ng-options="destino as destino.nombre for destino in ctrl.destinosLista"
                         ng-disabled="ctrl.modoSoloLectura"
                         ng-readonly="ctrl.modoSoloLectura">
                         <option value="" disabled selected hidden class="placeholder-select" ng-if="!ctrl.destino">Seleccione un destino</option>

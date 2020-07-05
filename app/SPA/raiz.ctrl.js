@@ -5,6 +5,7 @@ function($scope, $state, $stateParams, $uibModa, $cookies, raizService){
   ctrl.nombreUsuario = '';
   ctrl.state = '';
   ctrl.rolUsuario = '';
+  ctrl.idUsuario = 1;
   //ctrl.idUsuario = $cookies.get('usuarioID');
   ctrl.logOut = function () {
     var token = gapi.auth.getToken();
@@ -64,21 +65,21 @@ function($scope, $state, $stateParams, $uibModa, $cookies, raizService){
         ctrl.state = 'inicioAdmin';
         ctrl.rolUsuario = null;
         break;
-      case 'Alumno':
-        $cookies.put('rolActivoId', perfil.id);
-        ctrl.state = 'alumnoMisCursos';
-        ctrl.rolUsuario = 'A';
-        break;
-      case 'Profesor':
-        $cookies.put('rolActivoId', perfil.id);
-        ctrl.state = 'profesorMisCursos';
-        ctrl.rolUsuario = 'P';
-        break;
-      case 'Asistente de Docencia':
-        $cookies.put('rolActivoId', perfil.id);
-        ctrl.state = 'jpMisCursos';
-        ctrl.rolUsuario = 'J';
-        break;
+      // case 'Alumno':
+      //   $cookies.put('rolActivoId', perfil.id);
+      //   ctrl.state = 'alumnoMisCursos';
+      //   ctrl.rolUsuario = 'A';
+      //   break;
+      // case 'Profesor':
+      //   $cookies.put('rolActivoId', perfil.id);
+      //   ctrl.state = 'profesorMisCursos';
+      //   ctrl.rolUsuario = 'P';
+      //   break;
+      // case 'Asistente de Docencia':
+      //   $cookies.put('rolActivoId', perfil.id);
+      //   ctrl.state = 'jpMisCursos';
+      //   ctrl.rolUsuario = 'J';
+      //   break;
       default:
         $cookies.put('rolActivoId', perfil.id);
         ctrl.state = 'principal';

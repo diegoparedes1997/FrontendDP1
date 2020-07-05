@@ -6,22 +6,31 @@ angular.module('vHackersModule').controller('agregarPaqueteCtrl', ['$scope', '$s
     ctrl.listaPaquetes = [];
     ctrl.descripcionPaquete = '';
     ctrl.nuevoId = 1;
+    ctrl.idEncomienda = 1;
 
     ctrl.tablaPaquetes = new NgTableParams({}, { dataset: ctrl.listaPaquetes });
 
     ctrl.agregarPaquete = function () {
       var paqueteNuevo = {
-        id: ctrl.nuevoId,
+        //id: ctrl.nuevoId,
+        idEncomienda: ctrl.idEncomienda,
         descripcion: ctrl.descripcionPaquete
       };
 
-      ctrl.nuevoId += 1;
+      //ctrl.nuevoId += 1;
 
-      ctrl.listaPaquetes.push(paqueteNuevo);
-
-      ctrl.descripcionPaquete = '';
+      // ctrl.listaPaquetes.push(paqueteNuevo);
+      //
+      // ctrl.descripcionPaquete = '';
 
       //$scope.$apply();
+      agregarPaqueteService.registrarPaqueteEnvio(paqueteNuevo).then(function (respuestaPaquetesEnvio) {
+        console.log(respuestaPaquetesEnvio.id);
+        ctrl.listaPaquetes.push(paqueteNuevo);
+
+        ctrl.descripcionPaquete = '';
+      });
+
     };
 
     ctrl.eliminarPaquete = function (paqueteEliminado, indicePaqueteTabla) {
@@ -29,20 +38,30 @@ angular.module('vHackersModule').controller('agregarPaqueteCtrl', ['$scope', '$s
     };
 
     ctrl.registrarPaquetes = function () {
-      var paquetesEnvio = {
-        "listaPaquetes": ctrl.listaPaquetes
-      };
 
-      agregarPaqueteService.registrarPaquetesEnvio(paquetesEnvio).then(function (respuestaPaquetesEnvio) {
-        console.log(respuestaPaquetesEnvio.id);
-        $state.go('agregarRutas');
-      });
+      $state.go('listaEnvios');
+
+      // var paquetesEnvio = {
+      //   "listaPaquetes": ctrl.listaPaquetes
+      // };
+      //
+      // agregarPaqueteService.registrarPaquetesEnvio(paquetesEnvio).then(function (respuestaPaquetesEnvio) {
+      //   console.log(respuestaPaquetesEnvio.id);
+      //   $state.go('agregarRutas');
+      // });
     };
 
     ctrl.init = function () {
-      // listaEnviosService.obtenerEnvios().then(function (envios) {
-      //   ctrl.envios = envios;
-      // });
+      var datosEncomienda = {
+        "emisor": $stateParams.idEmisor,
+        "receptor": $stateParams.idReceptor,
+        "operario": $stateParams.idOperario
+      };
+      agregarPaqueteService.obtenerEncomienda(datosEncomienda).then(function (envios) {
+        ctrl.envios = envios;
+        console.log(envios);
+        ctrl.idEncomienda = ctrl.envios[0].idEncomienda;
+      });
     };
 
     ctrl.init();

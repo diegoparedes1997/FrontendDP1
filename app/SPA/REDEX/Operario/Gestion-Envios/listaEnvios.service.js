@@ -5,8 +5,8 @@ function($q, $http, variablesAmbiente) {
   var servicio = this;
 
  servicio.obtenerEnvios = function () {
-   //var urlObtenerEnvios = variablesAmbiente.apiUrl + variablesAmbiente.puertoAeropuertos + '/obtenerEnvios';
-   var urlObtenerEnvios = 'SPA/REDEX/Operario/Gestion-Envios/obtenerEnvios.json';
+   var urlObtenerEnvios = variablesAmbiente.apiUrl + variablesAmbiente.puertoAeropuertos + '/obtenerEncomiendas';
+   //var urlObtenerEnvios = 'SPA/REDEX/Operario/Gestion-Envios/obtenerEnvios.json';
    var $defer = $q.defer();
    $http({
        method: 'GET',

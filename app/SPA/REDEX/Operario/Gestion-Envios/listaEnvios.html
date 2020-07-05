@@ -25,13 +25,15 @@
               <div class="table-responsive">
                 <table ng-Table="ctrl.tablaEnvios" class="table table-bordered">
                   <tr ng-repeat="envio in ctrl.envios">
-                    <td data-title="'Codigo'">{{envio.codigo}}</td>
-                    <td data-title="'Cliente'">{{envio.cliente}}</td>
-                    <td data-title="'Origen'">{{envio.origen}}</td>
+                    <td data-title="'ID'" align="right">{{envio.idEncomienda}}</td>
+                    <!-- <td data-title="'Codigo'">{{envio.codigo}}</td> -->
+                    <td data-title="'Cliente emisor'">{{envio.emisor}}</td>
+                    <td data-title="'Cliente receptor'">{{envio.receptor}}</td>
+                    <!-- <td data-title="'Origen'">{{envio.origen}}</td>
                     <td data-title="'Destino'">{{envio.destino}}</td>
                     <td data-title="'Fecha envío'">{{envio.fechaEnvio}}</td>
-                    <td data-title="'Fecha máxima de llegada'">{{envio.fechaMaxLlegada}}</td>
-                    <td data-title="'Estado'">{{envio.estado}}</td>
+                    <td data-title="'Fecha máxima de llegada'">{{envio.fechaMaxLlegada}}</td> -->
+                    <!-- <td data-title="'Estado'">{{envio.estado}}</td> -->
                   </tr>
                 </table>
               </div>

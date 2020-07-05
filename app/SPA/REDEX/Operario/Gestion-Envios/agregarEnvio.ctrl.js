@@ -13,6 +13,8 @@ angular.module('vHackersModule').controller('agregarEnviosCtrl', ['$scope', '$st
 
     ctrl.destinosLista = [];
 
+    ctrl.idOperario = $scope.$parent.$parent.rCtrl.idUsuario;
+
     ctrl.regresarListarEnvios = function () {
       $state.go('listaEnvios');
     };
@@ -73,17 +75,19 @@ angular.module('vHackersModule').controller('agregarEnviosCtrl', ['$scope', '$st
 
     ctrl.guardarClientes = function () {
       var clientesPedido = {
-        "emisor": ctrl.clienteEmisor,
-        "receptor": ctrl.clienteReceptor
+        "emisor": ctrl.clienteEmisor.idCliente,
+        "receptor": ctrl.clienteReceptor.idCliente,
+        "operario": ctrl.idOperario
       };
 
       agregarEnviosService.registrarClientesPedido(clientesPedido).then(function (respuestaRegistroClientes) {
         console.log(respuestaRegistroClientes.id);
-        $state.go('agregarPaquetes');
+        $state.go('agregarPaquetes',{idEmisor: clientesPedido.emisor, idReceptor: clientesPedido.receptor, idOperario: clientesPedido.operario});
       })
     };
 
     ctrl.init = function () {
+      console.log(ctrl.idOperario);
       agregarEnviosService.obtenerCiudadesPaises().then(function (ciudadesPaises) {
         angular.copy(ciudadesPaises, ctrl.origenesLista);
         angular.copy(ciudadesPaises, ctrl.destinosLista);

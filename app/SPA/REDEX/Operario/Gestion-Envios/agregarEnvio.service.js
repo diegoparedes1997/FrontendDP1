@@ -5,8 +5,8 @@ function($q, $http, variablesAmbiente) {
   var servicio = this;
 
  servicio.obtenerCiudadesPaises = function () {
-   //var urlObtenerCiudadesPaises = variablesAmbiente.apiUrl + variablesAmbiente.puertoAeropuertos + '/obtenerEnvios';
-   var urlObtenerCiudadesPaises = 'SPA/REDEX/Operario/Gestion-Envios/obtenerCiudadesPaises.json';
+   var urlObtenerCiudadesPaises = variablesAmbiente.apiUrl + variablesAmbiente.puertoAeropuertos + '/obtenerPaises';
+   //var urlObtenerCiudadesPaises = 'SPA/REDEX/Operario/Gestion-Envios/obtenerCiudadesPaises.json';
    var $defer = $q.defer();
    $http({
        method: 'GET',
@@ -20,14 +20,18 @@ function($q, $http, variablesAmbiente) {
  };
 
  servicio.registrarClientesPedido = function (clientesPedido) {
-    //var urlRegistrarClientesPedido = variablesAmbiente.apiUrl + variablesAmbiente.puertoAeropuertos + '/obtenerEnvios';
-    var urlRegistrarClientesPedido = 'SPA/REDEX/Operario/Gestion-Envios/registrarClientesPedido.json';
+    var urlRegistrarClientesPedido = variablesAmbiente.apiUrl + variablesAmbiente.puertoAeropuertos + '/crearEncomienda?' + 'emisor=' + clientesPedido.emisor + '&receptor=' + clientesPedido.receptor + '&operario=' + clientesPedido.operario;
+    //var urlRegistrarClientesPedido = 'SPA/REDEX/Operario/Gestion-Envios/registrarClientesPedido.json';
+    console.log(urlRegistrarClientesPedido);
     var $defer = $q.defer();
     $http({
         //method: 'POST',
         method: 'GET',
         //data: clientesPedido,
-        url: urlRegistrarClientesPedido
+        url: urlRegistrarClientesPedido,
+        transformResponse: [function (data, headers) {
+          return data;
+        }]
      }).then(function (respuesta) {
        $defer.resolve(respuesta.data);
      }).catch(function (error) {
