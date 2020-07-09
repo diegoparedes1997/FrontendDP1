@@ -81,8 +81,12 @@ angular.module('vHackersModule').controller('agregarEnviosCtrl', ['$scope', '$st
       };
 
       agregarEnviosService.registrarClientesPedido(clientesPedido).then(function (respuestaRegistroClientes) {
-        console.log(respuestaRegistroClientes.id);
-        $state.go('agregarPaquetes',{idEmisor: clientesPedido.emisor, idReceptor: clientesPedido.receptor, idOperario: clientesPedido.operario});
+        console.log(respuestaRegistroClientes);
+
+        //ctrl.destino.idPais
+        //ctrl.origen.idPais
+
+        $state.go('agregarPaquetes',{idEmisor: clientesPedido.emisor, idReceptor: clientesPedido.receptor, idOperario: clientesPedido.operario, idPaisOrigen: ctrl.origen.idPais, idPaisDestino: ctrl.destino.idPais});
       })
     };
 

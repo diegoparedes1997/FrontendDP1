@@ -53,7 +53,7 @@ function ($urlRouterProvider,stateHelperProvider) {
                 },
                 {
                   name: 'agregarPaquetes',
-                  url: '/agregarPaquetes/:idEmisor/:idReceptor/:idOperario',
+                  url: '/agregarPaquetes/:idEmisor/:idReceptor/:idOperario/:idPaisOrigen/:idPaisDestino',
                   templateUrl: 'SPA/REDEX/Operario/Gestion-Envios/Gestion-Paquetes/agregarPaquetes.html'
                 },
                 {
