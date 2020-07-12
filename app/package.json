@@ -45,5 +45,8 @@
   },
   "scripts": {
     "postinstall": "bower install"
+  },
+  "dependencies": {
+    "@angular/cli": "^10.0.2"
   }
 }
