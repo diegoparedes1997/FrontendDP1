@@ -62,6 +62,23 @@ function ($urlRouterProvider,stateHelperProvider) {
                   templateUrl: 'SPA/REDEX/Operario/Gestion-Envios/Gestion-Rutas-Paquetes/agregarRutas.html'
                 }
               ]
+            },
+            {
+              name: 'gerente',
+              url: '/gerente',
+              templateUrl: 'SPA/REDEX/Gerente/gerente.html',
+              children:[
+                {
+                  name: 'inicioSimulacion',
+                  url: '/inicioSimulacion',
+                  templateUrl: 'SPA/REDEX/Gerente/Simulacion/inicioSimulacion.html'
+                },
+                {
+                  name: 'mapaSimulacion',
+                  url: '/mapaSimulacion/:idSimulacion',
+                  templateUrl: 'SPA/REDEX/Gerente/Simulacion/Mapa-Simulacion/mapaSimulacion.html'
+                }
+              ]
             }
           ]
         },

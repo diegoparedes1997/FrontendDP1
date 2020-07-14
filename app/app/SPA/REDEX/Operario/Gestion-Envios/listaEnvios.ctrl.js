@@ -8,7 +8,11 @@ angular.module('vHackersModule').controller('listaEnviosCtrl', ['$scope', '$stat
 
     ctrl.agregarEnvio = function () {
       $state.go('agregarEnvio');
-    }
+    };
+
+    ctrl.irSimulacion = function () {
+      $state.go('inicioSimulacion');
+    };
 
     ctrl.init = function () {
       console.log(ctrl.idUsuario);

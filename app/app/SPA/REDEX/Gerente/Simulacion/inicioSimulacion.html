@@ -1,0 +1,54 @@
+<section id="main">
+  <div class="container">
+    <div ng-controller="inicioSimulacionCtrl as ctrl">
+      <div class="block-container">
+        <h2>Gestionar Simulaci&oacute;n</h2>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>Simulaci&oacute;n log&iacute;stica</h2>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <!-- <div class="row">
+            <div class="col-md-12">
+              <div class="pull-right">
+                <button class="btn btn-primary color-fondo-azul-pucp waves-effect m-b-20 float-right" ng-click = "ctrl.agregarEnvio()"><i class="fa fa-plus-circle"></i> Agregar Env&iacute;o</button>
+              </div>
+            </div>
+          </div> -->
+          <div class="row">
+            <div class="col-md-12 col-sm-12">
+              <div class="form-group">
+                <label for="inputSimulacion" class="col-sm-2 control-label">N&uacute;mero de d&iacute;as para simular paquetes</label>
+                <div class="col-sm-10">
+                  <div class="fg-line">
+                    <input type="number" class="form-control input-sm" id="inputSimulacion" placeholder="Número de días" ng-model="ctrl.numeroDiasSimulacion">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-primary btn-sm waves-effect" ng-click="ctrl.realizarSimulacion()">Generar paquetes y simular</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div ng-if="ctrl.simulacionRealizada" class="row p-t-10">
+            <div class="col-md-12 col-sm-12">
+              <div class="p-b-25 p-r-25 p-l-25 p-t-2 text-center">
+                <button class="btn waves-effect" ng-click = "ctrl.visualizarSimulacionGrafica()"><i class="zmdi zmdi-eye zmdi-hc-fw"></i> Visualizar simulaci&oacute;n gr&aacute;fica</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-b-25 p-r-25 p-l-25 p-t-2 text-right">
+          <button class="btn waves-effect" ng-click = "ctrl.regresar()"><i class="zmdi zmdi-arrow-left zmdi-hc-fw"></i> Regresar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

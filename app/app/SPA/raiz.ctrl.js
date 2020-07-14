@@ -8,23 +8,24 @@ function($scope, $state, $stateParams, $uibModa, $cookies, raizService){
   ctrl.idUsuario = 1;
   //ctrl.idUsuario = $cookies.get('usuarioID');
   ctrl.logOut = function () {
-    var token = gapi.auth.getToken();
-    if (token) {
-      var accessToken = gapi.auth.getToken().access_token;
-      if (accessToken) {
-        raizService.logOut(accessToken).then(function (respuesta) {
-          gapi.auth.setToken(null);
-          gapi.auth.signOut();
-          $state.go('login');
-        });
-      }
-      else {
-        $state.go('login');
-      }
-    }
-    else {
-      $state.go('login');
-    }
+    $state.go('login');
+    // var token = gapi.auth.getToken();
+    // if (token) {
+    //   var accessToken = gapi.auth.getToken().access_token;
+    //   if (accessToken) {
+    //     raizService.logOut(accessToken).then(function (respuesta) {
+    //       gapi.auth.setToken(null);
+    //       gapi.auth.signOut();
+    //       $state.go('login');
+    //     });
+    //   }
+    //   else {
+    //     $state.go('login');
+    //   }
+    // }
+    // else {
+    //   $state.go('login');
+    // }
 
   };
 
@@ -50,7 +51,13 @@ function($scope, $state, $stateParams, $uibModa, $cookies, raizService){
         }
       ]
     }
-    ctrl.cargarPestana(ctrl.usuario.roles[0]);
+
+    var inicioSesion = $cookies.get('inicioSesion');
+
+    if (inicioSesion && inicioSesion !== 'false') {
+      $cookies.put('inicioSesion', false);
+      ctrl.cargarPestana(ctrl.usuario.roles[0]);
+    }
   };
 
   ctrl.cargarPestana = function(perfil) {
