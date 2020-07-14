@@ -16,13 +16,13 @@ if (window) {
 //  });
 //}
 
-var vHackersModule = angular.module('vHackersModule', ['ui.bootstrap', 'ngTable','ui.router','ui.router.stateHelper', 'localytics.directives', 'ngCookies', 'highcharts-ng']);
+var vHackersModule = angular.module('vHackersModule', ['ui.bootstrap', 'ngTable','ui.router','ui.router.stateHelper', 'localytics.directives', 'ngCookies', 'highcharts-ng', 'angularMapbox']);
 
 //Regitrar las variables de ambiente
 vHackersModule.constant('variablesAmbiente', ambiente);
 //Se ejecuta antes de que corra la aplicacion
-vHackersModule.config(['$urlRouterProvider', 'stateHelperProvider',
-function ($urlRouterProvider,stateHelperProvider) {
+vHackersModule.config(['$urlRouterProvider', 'stateHelperProvider', 'angularMapboxConfigProvider',
+function ($urlRouterProvider,stateHelperProvider, angularMapboxConfigProvider) {
   $urlRouterProvider.otherwise("inicio/login");
   stateHelperProvider
   .state({

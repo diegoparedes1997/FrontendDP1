@@ -47,6 +47,7 @@
     "postinstall": "bower install"
   },
   "dependencies": {
-    "@angular/cli": "^10.0.2"
+    "@angular/cli": "^10.0.2",
+    "angularjs-mapbox": "^1.0.13"
   }
 }

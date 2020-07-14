@@ -1,0 +1,56 @@
+{
+  "_from": "angularjs-mapbox",
+  "_id": "angularjs-mapbox@1.0.13",
+  "_inBundle": false,
+  "_integrity": "sha512-vaZbwpDRhR76HEU4fBKfHPDeWUowRNBXQZVkLgoyv4zsowNpkIPEoh4x/J6KbKLOyfHFM9HAxkJMQGmG4JZjbw==",
+  "_location": "/angularjs-mapbox",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "angularjs-mapbox",
+    "name": "angularjs-mapbox",
+    "escapedName": "angularjs-mapbox",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angularjs-mapbox/-/angularjs-mapbox-1.0.13.tgz",
+  "_shasum": "8227694952bee432f04a9710ff32fafeb89838a0",
+  "_spec": "angularjs-mapbox",
+  "_where": "D:\\Diego Paredes\\9no ciclo\\DP1\\Proyecto\\Frontend\\app",
+  "author": {
+    "name": "Edinson Salas",
+    "email": "edinsonsalas@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sedinson/angular-mapbox/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "angular": "^1.7.8",
+    "mapbox-gl": "^0.53.0"
+  },
+  "deprecated": false,
+  "description": "AngularJS MapBox library",
+  "homepage": "https://github.com/sedinson/angular-mapbox#readme",
+  "keywords": [
+    "mapbox",
+    "angularjs"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "angularjs-mapbox",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sedinson/angular-mapbox.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.13"
+}
