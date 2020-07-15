@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../angular-mapbox.css">
+    <style>
+        .my-map {
+            position: relative;
+            width: 600px;
+            height: 400px;
+        }
+
+        .map-marker {
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            background: red;
+        }
+    </style>
+    <title>Draw a circle</title>
+</head>
+<body ng-app="baseApp">
+    <h2>Draw a circle</h2>
+    <p>Draw a circle in meters. You can change the conversion function on kilometers (km), meters (m) or pixels (px)</p>
+    <div ng-controller="mapController">
+        <p>
+            <label>Radius (mts)</label>
+            <input type="number" ng-model="radius">
+        </p>
+
+        <div class="my-map">
+            <angular-mapbox-map zoom="map.zoom" center="map.center" design="'mapbox://styles/mapbox/streets-v10'">
+                <angular-mapbox-circle identificator="'my-radius'" unit="'m'" center="map.center" radius="radius" layout="{}" paint="{ 'circle-color': 'rgba(255,0,0,0.5)', 'circle-stroke-color': '#000', 'circle-stroke-width': 2 }"></angular-mapbox-circle>
+            </angular-mapbox-map>
+        </div>
+    </div>
+
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/mapbox-gl/dist/mapbox-gl.js"></script>
+    <script src="../index.js"></script>
+    <script>
+        (function () {
+            var app = angular.module('baseApp', [
+                'angularMapbox'
+            ]);
+
+            app.config(
+                [
+                    'angularMapboxConfigProvider', 
+                    function(angularMapboxConfigProvider) {
+                        angularMapboxConfigProvider.config({
+                            accessToken: '<access token>'
+                        });
+                    }
+                ]
+            );
+
+            app.controller('mapController', function($scope) {
+                $scope.map = {
+                    zoom: 12,
+                    center: [ -74.804486, 10.980780 ]
+                };
+
+                $scope.radius = 100;
+            });
+        })();
+    </script>
+</body>
+</html>

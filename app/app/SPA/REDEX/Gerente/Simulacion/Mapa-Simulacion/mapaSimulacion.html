@@ -4,25 +4,40 @@
       <div class="block-container">
         <h2>Gestionar Simulaci&oacute;n</h2>
       </div>
-      <div class="card">
-        <div class="card-header">
-          <div class="row">
-            <div class="col-md-12">
-              <h2>Mapa Simulaci&oacute;n</h2>
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              <div class="row">
+                <div class="col-md-12">
+                  <h2>Mapa Simulaci&oacute;n</h2>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-12 col-sm-12">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12 col-sm-12">
 
+                </div>
+              </div>
+            </div>
+            <div class="p-b-25 p-r-25 p-l-25 p-t-2 text-right">
+              <button class="btn waves-effect" ng-click = "ctrl.regresar()"><i class="zmdi zmdi-arrow-left zmdi-hc-fw"></i> Regresar</button>
             </div>
           </div>
-        </div>
-        <div class="p-b-25 p-r-25 p-l-25 p-t-2 text-right">
-          <button class="btn waves-effect" ng-click = "ctrl.regresar()"><i class="zmdi zmdi-arrow-left zmdi-hc-fw"></i> Regresar</button>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-1 col-sm-12 margen-mapa-simulacion">
+
+        </div>
+        <div class="col-md-10 col-sm-12">
+          <angular-mapbox-map zoom="ctrl.map.zoom" center="ctrl.map.center" design="'mapbox://styles/mapbox/streets-v9'" on-load-function="ctrl.funcionCargaMapa">
+            <angular-mapbox-marker ng-repeat="marker in ctrl.markers" model="marker" identificator="'id'"></angular-mapbox-marker>
+          </angular-mapbox-map>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

@@ -23,6 +23,10 @@ vHackersModule.constant('variablesAmbiente', ambiente);
 //Se ejecuta antes de que corra la aplicacion
 vHackersModule.config(['$urlRouterProvider', 'stateHelperProvider', 'angularMapboxConfigProvider',
 function ($urlRouterProvider,stateHelperProvider, angularMapboxConfigProvider) {
+  angularMapboxConfigProvider.config({
+    accessToken: 'pk.eyJ1IjoiZGllZ29wYXJlZGVzOTciLCJhIjoiY2tjbWYxdjR2MDBvYjJzcndveTNrN3oxdCJ9.PZmrEHpcOxA7t9N---3IDg'
+  });
+
   $urlRouterProvider.otherwise("inicio/login");
   stateHelperProvider
   .state({

@@ -86,3 +86,7 @@ body{
 .largo-boton{
   width: 200px;
 }
+
+.margen-mapa-simulacion{
+  margin-bottom: 300px !important;
+}
