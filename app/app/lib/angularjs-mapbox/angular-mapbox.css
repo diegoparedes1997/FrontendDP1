@@ -1,4 +1,4 @@
-@import "../../node_modules/mapbox-gl/src/css/mapbox-gl.css";
+@import "../mapbox-gl/src/css/mapbox-gl.css";
 .angular-mapbox-gls {
   position: absolute;
   top: 0;
