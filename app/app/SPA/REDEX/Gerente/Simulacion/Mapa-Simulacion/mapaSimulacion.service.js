@@ -34,4 +34,19 @@ function($q, $http, variablesAmbiente) {
    return $defer.promise;
  };
 
+ servicio.obtenerRutasPaletas = function () {
+   //var urlObtenerRutasPaletas = variablesAmbiente.apiUrl + variablesAmbiente.puertoAeropuertos + '/simularEnvios?' + 'numeroDiasSimulacion=' + numeroDiasSimulacion;
+   var urlObtenerRutasPaletas = 'SPA/REDEX/Gerente/Simulacion/Mapa-Simulacion/obtenerRutasPaletas1.json';
+   var $defer = $q.defer();
+   $http({
+       method: 'GET',
+       url: urlObtenerRutasPaletas
+    }).then(function (respuesta) {
+      $defer.resolve(respuesta.data);
+    }).catch(function (error) {
+      $defer.reject(error);
+    });
+   return $defer.promise;
+ };
+
 }]);

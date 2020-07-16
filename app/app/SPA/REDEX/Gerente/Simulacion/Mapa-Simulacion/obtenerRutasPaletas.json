@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "origen": {
+      "id": "1",
+      "nombre": "Lima",
+      "longitud": -77.02824,
+      "latitud": -12.04318
+    },
+    "destino": {
+      "id": "2",
+      "nombre": "Madrid",
+      "longitud": -3.70256,
+      "latitud": 40.4165
+    }
+  },
+  {
+    "id": "2",
+    "origen": {
+      "id": "1",
+      "nombre": "Lima",
+      "longitud": -77.02824,
+      "latitud": -12.04318
+    },
+    "destino": {
+      "id": "3",
+      "nombre": "Santiago de Chile",
+      "longitud": -70.64827,
+      "latitud": -33.45694
+    }
+  },
+  {
+    "id": "3",
+    "origen": {
+      "id": "2",
+      "nombre": "Madrid",
+      "longitud": -3.70256,
+      "latitud": 40.4165
+    },
+    "destino": {
+      "id": "4",
+      "nombre": "Washington DC",
+      "longitud": -77.032,
+      "latitud": 38.913
+    }
+  }
+]

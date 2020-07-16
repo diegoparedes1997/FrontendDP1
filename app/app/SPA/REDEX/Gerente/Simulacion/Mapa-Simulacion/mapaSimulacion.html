@@ -32,7 +32,7 @@
 
         </div>
         <div class="col-md-10 col-sm-12">
-          <angular-mapbox-map zoom="ctrl.map.zoom" center="ctrl.map.center" design="'mapbox://styles/mapbox/streets-v9'" on-load-function="ctrl.funcionCargaMapa">
+          <angular-mapbox-map zoom="ctrl.map.zoom" center="ctrl.map.center" design="'mapbox://styles/mapbox/streets-v9'" on-load-function="ctrl.cargarAvionesAnimaciones">
             <angular-mapbox-marker ng-repeat="marker in ctrl.markers" model="marker" identificator="'id'"></angular-mapbox-marker>
           </angular-mapbox-map>
         </div>
