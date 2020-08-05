@@ -5,8 +5,8 @@ function($q, $http, variablesAmbiente) {
   var servicio = this;
 
  servicio.obtenerSimulaciones = function () {
-   var urlObtenerSimulaciones = variablesAmbiente.apiUrl + variablesAmbiente.puertoAeropuertos + '/obtenerSimulaciones';
-   //var urlObtenerSimulaciones = 'SPA/REDEX/Gerente/Simulacion/obtenerSimulaciones.json';
+   //var urlObtenerSimulaciones = variablesAmbiente.apiUrl + variablesAmbiente.puertoAeropuertos + '/obtenerSimulaciones';
+   var urlObtenerSimulaciones = 'SPA/REDEX/Gerente/Simulacion/obtenerSimulaciones.json';
    var $defer = $q.defer();
    $http({
        method: 'GET',

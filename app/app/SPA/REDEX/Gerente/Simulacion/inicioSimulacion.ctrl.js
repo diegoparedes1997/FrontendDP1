@@ -12,9 +12,9 @@ angular.module('vHackersModule').controller('inicioSimulacionCtrl', ['$scope', '
 
     ctrl.realizarSimulacion = function () {
       console.log(ctrl.numeroDiasSimulacion);
-      inicioSimulacionService.realizarSimulacion().then(function (respuestaSimulacion) {
+      inicioSimulacionService.realizarSimulacion(ctrl.numeroDiasSimulacion).then(function (respuestaSimulacion) {
         console.log(respuestaSimulacion);
-        ctrl.idSimulacionGenerada = respuestaSimulacion.id;
+        ctrl.idSimulacionGenerada = respuestaSimulacion.idSimulacion;
         ctrl.simulacionRealizada = true;
       });
     };
