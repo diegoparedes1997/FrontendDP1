@@ -22,8 +22,9 @@ function($q, $http, variablesAmbiente) {
     return $defer.promise;
   };
 
-  servicio.obtenerUsuarioLogin = function (usuarioId) {
-    var urlObtenerUsuario = variablesAmbiente.apiUrl + variablesAmbiente.puertoUsuarios + '/usuarios/obtenerusuario/' + usuarioId;
+  servicio.validarUsuarioLogin = function (usuario, contraseña) {
+    var urlObtenerUsuario = variablesAmbiente.apiUrl + variablesAmbiente.puertoAeropuertos + '/validarUsuario?usuario='+usuario+'&contra=' + contraseña;
+    console.log(urlObtenerUsuario);
     var $defer = $q.defer();
     $http({
         method: 'GET',

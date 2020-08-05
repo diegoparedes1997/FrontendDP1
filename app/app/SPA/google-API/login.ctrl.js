@@ -42,8 +42,20 @@ function ($scope, $state, variablesAmbiente, $cookies, loginService) {
     })
   };
 
+
+
   ctrl.pruebaLoginOperario = function () {
-    $cookies.put('inicioSesion', true);
-    $state.go('raiz');
+    console.log(ctrl.usuario.username, ctrl.usuario.password);
+    loginService.validarUsuarioLogin(ctrl.usuario.username, ctrl.usuario.password).then(function(element){
+      console.log(element);
+      if (element.length == 1){
+        $cookies.put('idOperario', element.idUsuario);
+        $cookies.put('inicioSesion', true);
+        $state.go('raiz');
+      }else{
+
+      }
+    });
+
   };
 }]);
