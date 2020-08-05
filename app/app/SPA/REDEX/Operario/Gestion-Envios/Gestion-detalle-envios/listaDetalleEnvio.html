@@ -1,0 +1,49 @@
+<section>
+  <div>
+    <div class="card-header">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="actions">
+            <li>
+              <a class="pull-right" ng-click="ctrl.cerrar()"><i class="fa fa-window-close"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h4 class="modal-title">Paquetes de env&iacute;o</h4>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <div class="table-responsive">
+              <table ng-Table="ctrl.tablaPaquetes" class="table table-bordered">
+                <tr ng-repeat="paquete in ctrl.listaPaquetes">
+                  <td data-title="'Código'">{{paquete.codPaquete}}</td>
+                  <td data-title="'Descripción'">{{paquete.descripcion}}</td>
+                  <td data-title="'Fecha registro'">{{paquete.registro}}</td>
+                  <td data-title="'Fecha llegada'">{{paquete.llegadaProgramada}}</td>
+                  <td data-title="'Ruta'">{{paquete.ruta}}</td>
+                  <td data-title="'Ubicacion actual'">{{paquete.ciudadActual}}</td>
+                  <!-- <td data-title="'Acciones'" align="center">
+                    <a href="" style="padding:5px;" class="col-md-12" ng-click="ctrl.seleccionarCliente(cliente)">
+                      Seleccionar
+                    </a>
+                  </td> -->
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-b-25 p-r-25 p-l-25 p-t-2 text-right">
+
+        <button class="btn btn-danger waves-effect" ng-click = "ctrl.cerrar()"><i class="fa fa-ban"></i> Cancelar</button>
+      </div>
+    </div>
+  </div>
+</section>

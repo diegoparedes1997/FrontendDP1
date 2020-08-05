@@ -14,6 +14,24 @@ angular.module('vHackersModule').controller('listaEnviosCtrl', ['$scope', '$stat
       $state.go('inicioSimulacion');
     };
 
+    ctrl.verPaquetesEnvio = function (envio) {
+      var modalInstance = $uibModal.open({
+        animation: false,
+        templateUrl: 'SPA/REDEX/Operario/Gestion-Envios/Gestion-detalle-envios/listaDetalleEnvio.html',
+        controller: 'modalListaDetalleEnvioCtrl as ctrl',
+        size: 'lg',
+        backdrop: true,
+        keyboard: true,
+        resolve: {
+          parametrosDetalleEnvio: function () {
+            return {
+              idEnvio: envio.idEncomienda
+            };
+          }
+        }
+      });
+    }
+
     ctrl.init = function () {
       console.log(ctrl.idUsuario);
       listaEnviosService.obtenerEnvios().then(function (envios) {

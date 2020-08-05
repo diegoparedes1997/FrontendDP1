@@ -29,6 +29,13 @@
                     <!-- <td data-title="'Codigo'">{{envio.codigo}}</td> -->
                     <td data-title="'Cliente emisor'">{{envio.emisor}}</td>
                     <td data-title="'Cliente receptor'">{{envio.receptor}}</td>
+                    <td data-title="'Acciones'" align="center">
+                      <!-- <div align="center"> -->
+                      <a href="" style="padding:5px;" class="col-md-12" ng-click="ctrl.verPaquetesEnvio(envio)">
+                        Ver paquetes
+                      </a>
+                      <!-- </div> -->
+                    </td>
                     <!-- <td data-title="'Origen'">{{envio.origen}}</td>
                     <td data-title="'Destino'">{{envio.destino}}</td>
                     <td data-title="'Fecha envío'">{{envio.fechaEnvio}}</td>
